@@ -3,7 +3,7 @@ using namespace std;
 
 class rekeningBank
 {
-private:
+protected:
     string namaPemilik;
     int saldo;
 public:
@@ -19,5 +19,38 @@ public:
     void tampilInfo()
     {
         cout << "Pemilik " << namaPemilik << " adalah " << saldo << "\n" << endl;
+    }
+};
+
+class rekeningSyariah : public rekeningBank
+{
+public:
+    rekeningSyariah(string pNama, int pSaldo) :
+        rekeningBank(pNama, pSaldo)
+    {
+        cout << "Rekening syariah dibuat\n" << endl;
+    }
+
+    void potonganAdmin() 
+    override 
+    {
+        cout << "[Syariah] " << namaPemilik << " bebas biaya admin." << endl;
+    }
+};
+
+class rekeningKonvensional : public rekeningBank
+{
+public:
+    rekeningKonvensional(string pNama, int pSaldo) :
+        rekeningBank(pNama, pSaldo)
+    {
+        cout << "Rekening konvensional dibuat\n" << endl;
+    }
+
+    void potonganAdmin() 
+    override 
+    {
+        saldo -= 15000;
+        cout << "Potongan admin rekening konvensional sebesar 15000\n" << endl;
     }
 };
