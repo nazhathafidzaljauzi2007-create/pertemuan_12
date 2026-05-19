@@ -1,1 +1,0 @@
-"# pertemuan_12" 
