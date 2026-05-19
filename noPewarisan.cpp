@@ -27,3 +27,10 @@ public:
         cout << "Hallo saya Function dari derived class" << endl;
     }
 };
+
+int main()
+{
+    derivedClass a;
+    a.perkenalan();
+    return 0;
+}
