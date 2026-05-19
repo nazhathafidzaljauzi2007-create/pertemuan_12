@@ -54,3 +54,27 @@ public:
         cout << "Potongan admin rekening konvensional sebesar 15000\n" << endl;
     }
 };
+
+class rekeningPremium : public rekeningBank
+{
+public:
+    rekeningPremium(string pNama, int pSaldo) :
+        rekeningBank(pNama, pSaldo)
+    {
+        cout << "Rekening premium dibuat\n" << endl;
+    }
+
+    void potonganAdmin() 
+    override 
+    {
+        if (saldo > 10000000)
+        {
+            cout << " [premium]" << namaPemilik << " bebas biaya admin (Saldo > 10 Juta)" << endl;
+        }
+        else
+        {
+            saldo -= 50000;
+            cout << " [premium]" << namaPemilik << " dipotong 50000 (Saldo <= 10 Juta)" << endl;
+        }
+    }
+};
