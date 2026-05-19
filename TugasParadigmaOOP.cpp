@@ -78,3 +78,27 @@ public:
         }
     }
 };
+
+int main()
+{
+    rekeningSyariah syariah("Andi", 5000000);
+    rekeningKonvensional konvensional("Budi", 3000000);
+    rekeningPremium premium("Citra", 15000000);
+
+    cout << "\nInformasi rekening sebelum potongan admin:\n" << endl;
+    syariah.tampilInfo();
+    konvensional.tampilInfo();
+    premium.tampilInfo();
+
+    cout << "\nProses potongan admin:\n" << endl;
+    syariah.potonganAdmin();
+    konvensional.potonganAdmin();
+    premium.potonganAdmin();
+
+    cout << "\nInformasi rekening setelah potongan admin:\n" << endl;
+    syariah.tampilInfo();
+    konvensional.tampilInfo();
+    premium.tampilInfo();
+
+    return 0;
+}
